@@ -2,9 +2,16 @@
 using namespace std;
 
 bool muchaDiferencia(int diferencia, int num1, int num2){
-  return (num1-num2 > diferencia);
+  return (num1-num2 > diferencia || num1-num2 < diferencia );
 }
 
+int valorAbsoluto(int num){
+  if (num < 0){
+    return (num * (-1));
+  } else {
+    return num;
+  }
+}
 int main(){
   string saludo = "Hola";
   string repetir;
@@ -13,6 +20,8 @@ int main(){
   bool diferencia;
   int edad = 26;
   int edadIntroducida;
+  int num;
+  int pruebanum;
   /*cout << "Imprimir por pantalla" << endl;
   cout << "Imprimir por pantalla\n";
   cout << "Comprobacion de salto de linea";
@@ -45,16 +54,15 @@ int main(){
   if (edadIntroducida >= edad){
     cout << "Puto viejo";
   } else {
-    cout << "Eres muy madura para tu edad";
+    cout << "Eres muy madura para tu edad" << endl;
   }
 
   diferencia = muchaDiferencia(5,edadIntroducida,edad);
   if (diferencia){
-    cout << "Hay mucha diferencia de edad";
+    cout << "Hay mucha diferencia de edad" << endl;
   }
 
-  //*Deberes; crear funcion de valor absoluto
-
-
+  pruebanum = valorAbsoluto (-7);
+  cout << pruebanum << endl;
   return 0;
 }
