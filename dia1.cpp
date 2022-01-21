@@ -21,9 +21,27 @@ int main(){
 	cout << palabra << endl;
 	cout << palabra1 << endl;
 	palabra = "nada";
-	palabra = palabra1 + " " + palabra2;
+	palabra = palabra + " " + palabra2;
 	cout << palabra << endl;
 
+	int xint, yint;
+	string xstr, ystr;
+	xint = 10;
+	yint = 20;
+	xstr = "10";
+	ystr = "20";
+
+	cout << "Aqui se imprime xint: " << xint << endl;
+	cout << "Aqui se imprime yint: " << yint << endl;
+	cout << "int x+y = " << xint + yint << endl;
+	cout << "str x+y = " << xstr + ystr << endl;
+	cout << "xstr + yint [to_string(yint)] = " << xstr + to_string(yint) << endl;
+	cout << "[stoi(xstr)] xstr + yint = " << stoi(xstr) + yint << endl;
+
+	cout << palabra << endl;
+	cout << "La palabra tiene " << palabra.length() << "letras." << endl;
+	cout << "La palabra tiene " << palabra.size() << "letras." << endl;
+	cout << "La primera letra de la palabra es: " << palabra[0];
 
 	/*//Jugamos con número
 	cout << numero1 << endl;
