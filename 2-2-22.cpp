@@ -67,6 +67,12 @@ void imprimirLista(char lista[], int tama){
   }
 }
 
+void imprimirLista(int lista[], int tama){
+  for (int i = 0 ; i < tama ; i++){
+    cout << lista[i] << endl;
+  }
+}
+
 
 void pasarLista(string lista[], int tama, char listaFaltas[]){
   string respuesta;
@@ -78,6 +84,40 @@ void pasarLista(string lista[], int tama, char listaFaltas[]){
   }
 }
 
+  void reorganizarComida (int pecerasComida[], int tama){
+    int sobran = 0;
+    for (int i = 0 ; i < tama ; i++){
+      pecerasComida[i] += sobran;
+      sobran = pecerasComida[i]%3;
+      pecerasComida[i] -= sobran;
+    }
+  }
+
+  int posicionDatoMenor(int lista[], int tama){
+    int menor = lista[0];
+    int posicion = 0;
+    for (int i = 1; i < tama ; i++){
+      if (lista[i] < menor){
+        menor = lista[i];
+        posicion = i;
+      }
+    }
+    return posicion;
+  }
+
+  void reorganizarComidaDeOtraForma (int pecerasComida[], int tama){
+    int sumaSobran = 0;
+    int sobran = 0;
+    int posicion;
+    for (int i = 0 ; i < tama ; i++){
+      sobran = pecerasComida[i]%3;
+      pecerasComida[i] -= sobran;
+      sumaSobran += sobran;
+    }
+    posicion = posicionDatoMenor(pecerasComida, tama);
+    pecerasComida[posicion] += sumaSobran;
+  }
+
 
 int main() {
   string contrasena = "crustaceo";
@@ -86,6 +126,8 @@ int main() {
   int tamaLista = 5;
   string listaPulpos[] = {"A" , "B" , "C" , "D" , "E"}; /// [] para indicar que es una lista al string
   char listaFaltas[tamaLista];
+  int crustaceos[] = {23, 74, 92, 64, 27, 13, 84, 73};
+
 
   cout << "Carlos Sanchez Piña" << endl;
 
@@ -109,7 +151,18 @@ int main() {
   cout << endl;
   imprimirLista(listaFaltas, tamaLista);
 
+
+  ///Ejercicio 4
+  imprimirLista(crustaceos, 8);
+  cout << endl;
+  reorganizarComida (crustaceos, 8);
+  imprimirLista(crustaceos, 8);
+  cout << endl;
+  reorganizarComidaDeOtraForma (crustaceos, 8);
+  imprimirLista(crustaceos, 8);
+
   return 0;
+
 }
 
 
