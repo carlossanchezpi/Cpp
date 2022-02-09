@@ -9,7 +9,6 @@ void rellenarMatrizCeros (int matriz [TAMA][TAMA], int nFil, int nCol){
     }
   }
 }
-<<<<<<< HEAD
 void rellenarMatrizNumero (int matriz [TAMA][TAMA], int nFil, int nCol, int num){
   for (int i = 0 ; i < nFil ; i++){
     for (int j = 0 ; j < nCol ; j++){
@@ -46,13 +45,9 @@ void imprimirMatriz (string matriz[TAMA][TAMA], int nFil, int nCol){
 	}
 }
 
-=======
->>>>>>> f4df8fde5f1e5ee3a0d02aacc6220e4095c222aa
-
 int main(){
   int array[TAMA];
   int matriz[TAMA][TAMA];
-<<<<<<< HEAD
   string matrizTablero[TAMA][TAMA];
   int num = 69;
 
@@ -70,9 +65,6 @@ int main(){
   rellenarMatrizTablero(matrizTablero, TAMA, TAMA);
   imprimirMatriz(matrizTablero, TAMA, TAMA);
   cout << endl;
-=======
 
-
->>>>>>> f4df8fde5f1e5ee3a0d02aacc6220e4095c222aa
   return 0;
 }
