@@ -12,11 +12,55 @@ int suma10 (int* ptrNum){
   return *ptrNum;
 }
 
+double* rellenarArrayNotas (int tama){
+  double* array = new double [tama];
+  string line;
+  for (int i = 0 ; i < tama ; i++){
+    cout << "Dime una nota: ";
+    getline(cin,line);
+    array[i] = stod(line);
+  }
+  return array;
+}
+
+double* subirNotaArray (double* array, int tama, int porcentaje ){
+
+}
+
+
+string* rellenarArray(int tama){
+  string* array = new string [tama];
+  for (int i = 0 ; i < tama ; i++){
+    cout << "Dime un color: ";
+    getline(cin,array[i]);
+  }
+  return array;
+}
+
+/* void rellenarArray(int tama, string array[]){
+  for (int i = 0 ; i < tama ; i++){
+    cout << "Dime un color: ";
+    getline(cin,array[i]);
+  }
+}
+*/
+void imprimirArray(string* array, int tama){ //string* array y string array[] es lo mismo
+  for (int i = 0 ; i < tama ; i++){
+    cout << array[i] << " " << endl;
+  }
+}
+
+void imprimirArray(double* array, int tama){ //string* array y string array[] es lo mismo
+  for (int i = 0 ; i < tama ; i++){
+    cout << array[i] << " " << endl;
+  }
+}
 
 int main(){
   /// Tercera parte
   string line;
   string* colores = NULL;
+  double* notas = NULL;
   cout << "Valor de colores = NULL: " << colores << endl;
 
   int numero;
@@ -25,22 +69,16 @@ int main(){
   numero = stoi(line);
 
   colores = new string [numero];
-  cout << "Valor de colores = new string[numero]: " << colores << endl;
+  //cout << "Valor de colores = new string[numero]: " << colores << endl;
 
-  for (int i = 0 ; i < numero ; i++){
-    cout << "Dime un color: ";
-    getline(cin,colores[i]);
-  }
+  //colores = rellenarArray (numero);
+  //imprimirArray (numero, colores);
 
-  for (int i = 0 ; i < numero ; i++){
-    cout << colores[i] << " " << endl;
-  }
+  notas = rellenarArrayNotas(numero);
+  imprimirArray (notas, numero);
 
   delete [] colores;
-
-  for (int i = 0 ; i < numero ; i++){
-    cout << colores[i] << " " << endl;
-  }
+  colores = NULL;
 
   //// Segunda parte
   /*
