@@ -23,8 +23,12 @@ double* rellenarArrayNotas (int tama){
   return array;
 }
 
-double* subirNotaArray (double* array, int tama, int porcentaje ){
-
+double* subirNotaArray (double* array, int tama, double porcentaje){
+  double* nuevoArray = new double[tama];
+  for (int i = 0 ; i < tama ; i++){
+    nuevoArray[i] = array[i]*(1+(porcentaje/100));
+  }
+  return nuevoArray;
 }
 
 
@@ -61,6 +65,8 @@ int main(){
   string line;
   string* colores = NULL;
   double* notas = NULL;
+  double* nuevasNotas = NULL;
+  double porcentaje = 20;
   cout << "Valor de colores = NULL: " << colores << endl;
 
   int numero;
@@ -77,6 +83,8 @@ int main(){
   notas = rellenarArrayNotas(numero);
   imprimirArray (notas, numero);
 
+  nuevasNotas = subirNotaArray(notas, numero, porcentaje);
+  imprimirArray (nuevasNotas, numero);
   delete [] colores;
   colores = NULL;
 
