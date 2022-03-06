@@ -24,11 +24,11 @@ double* rellenarArrayNotas (int tama){
 }
 
 double* subirNotaArray (double* array, int tama, double porcentaje){
-  double* nuevasNotas = new double[tama];
-    for (int i = 0; i < tama; i++){
-      nuevasNotas[i] = array[i]*(1+(porcentaje/100));
-    }
-    return nuevasNotas;
+  double* nuevoArray = new double[tama];
+  for (int i = 0 ; i < tama ; i++){
+    nuevoArray[i] = array[i]*(1+(porcentaje/100));
+  }
+  return nuevoArray;
 }
 
 
@@ -66,6 +66,7 @@ int main(){
   string* colores = NULL;
   double* notas = NULL;
   double* nuevasNotas = NULL;
+  double porcentaje = 20;
   cout << "Valor de colores = NULL: " << colores << endl;
 
   int numero;
@@ -80,14 +81,10 @@ int main(){
   //imprimirArray (numero, colores);
 
   notas = rellenarArrayNotas(numero);
-  imprimirArray(notas, numero);
+  imprimirArray (notas, numero);
 
-  nuevasNotas = subirNotaArray(notas , numero, 20);
-  imprimirArray(nuevasNotas, numero);
-
-
-  delete[] notas;
-  notas= NULL;
+  nuevasNotas = subirNotaArray(notas, numero, porcentaje);
+  imprimirArray (nuevasNotas, numero);
   delete [] colores;
   colores = NULL;
 
@@ -99,10 +96,13 @@ int main(){
   resultado = suma10(numero);
   cout << "Imprimir numero despues de sumar10(int): " << numero << endl;
   cout << "Imprimir resultado despues de sumar10(int) " << resultado << endl;
+
   cout << "Imprimir numero: " << numero << endl;
   resultado = suma10(&numero);
   cout << "Imprimir numero despues de sumar10(*int): " << numero << endl;
   cout << "Imprimir resultado despues de sumar10(*int) " << resultado << endl;
+
+
   /// Primera parte
   /*string juego = "Tetris";
   string &ocio = juego;
