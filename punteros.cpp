@@ -85,6 +85,7 @@ int main(){
 
   nuevasNotas = subirNotaArray(notas, numero, porcentaje);
   imprimirArray (nuevasNotas, numero);
+
   delete [] colores;
   colores = NULL;
 
